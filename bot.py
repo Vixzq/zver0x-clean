@@ -1,12 +1,13 @@
-<<<<<<< HEAD
+7<<<<<<< HEAD
 import telebot
 import random
 import string
-from telebot.types import ReplyKeyboardMarkup, KeyboardButton
+from telebot.types import ReplyKeyboardMarkup, KeyboardButt
+
 
 import os
 
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.getenv("BOT_TOKEN")
 
 
 try:
