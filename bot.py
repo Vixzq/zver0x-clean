@@ -1,4 +1,4 @@
-7<<<<<<< HEAD
+
 import telebot
 from flask import Flask
 from threading import Thread
