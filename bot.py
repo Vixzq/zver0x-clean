@@ -1,5 +1,4 @@
 import telebot
-<<<<<<< HEAD
 import time
 import random
 import string
@@ -7,7 +6,7 @@ import string
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 TOKEN = "8694782952:AAFSaRBRE2cPNXSRQAeFdu3A4UNdgyVI2Sw"
-=======
+
 from flask import Flask
 from threading import Thread
 import os
@@ -33,12 +32,12 @@ try:
 except:
     approved_users = []
 
->>>>>>> 2ecb464ceb708171b4fa208edfd19fd4290fee66
+
 ADMIN_ID = 5798647399
 
 bot = telebot.TeleBot(TOKEN)
 
-<<<<<<< HEAD
+
 def count_lines(filename):
     try:
         with open(filename, "r", encoding="utf-8") as f:
@@ -49,13 +48,13 @@ def count_lines(filename):
 def generate_key():
     characters = string.ascii_uppercase + string.digits
     return ''.join(random.choice(characters) for _ in range(10))
-=======
->>>>>>> 2ecb464ceb708171b4fa208edfd19fd4290fee66
+
+
 
 @bot.message_handler(commands=['start'])
 def start(message):
 
-<<<<<<< HEAD
+
     markup = ReplyKeyboardMarkup(resize_keyboard=True)
 
     btn1 = KeyboardButton("📂 Generate Files")
@@ -144,7 +143,7 @@ def redeem(message):
     if not found:
         bot.reply_to(message, "❌ Invalid or used key.")
 
-=======
+
     kb = ReplyKeyboardMarkup(resize_keyboard=True)
 
     kb.add(KeyboardButton("Generate File"))
@@ -250,14 +249,13 @@ def stats(message):
 
 def generate_key():
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
->>>>>>> 2ecb464ceb708171b4fa208edfd19fd4290fee66
 
 
 @bot.message_handler(commands=['genkey'])
 def genkey(message):
 
     if message.from_user.id != ADMIN_ID:
-<<<<<<< HEAD
+
         bot.reply_to(message, "❌ Admin only.")
         return
 
@@ -407,7 +405,7 @@ while True:
     except Exception as e:
         print(e)
         time.sleep(5)
-=======
+
         return
 
     key = generate_key()
@@ -2162,7 +2160,6 @@ if __name__ == "__main__":
 
 
 
->>>>>>> 2ecb464ceb708171b4fa208edfd19fd4290fee66
 
 
 
