@@ -1,4 +1,3 @@
-
 import telebot
 from flask import Flask
 from threading import Thread
@@ -216,7 +215,7 @@ bot.infinity_polling(
     timeout=30,
     long_polling_timeout=10
 )
-=======
+
 import os
 import json
 import random
