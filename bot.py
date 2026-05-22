@@ -4,7 +4,7 @@ from threading import Thread
 import os
 import random
 import string
-from telebot.types import ReplyKeyboardMarkup, KeyboardButt
+from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 
 import os
@@ -1901,4 +1901,3 @@ if __name__ == "__main__":
 
 
 
->>>>>>> f402bc8da551950a280cc12eb512102887d477ae
