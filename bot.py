@@ -2095,10 +2095,10 @@ async def button_handler(update: Update, context: CallbackContext):
 def check_spam(user_id):
     if not keys_data.get("antispam"):
         return False
-        
+
     duration_str, cooldown = next(iter(keys_data["antispam"].items()))
     now = datetime.now().timestamp()
-    
+
     if user_id in ANTI_SPAM:
         if now - ANTI_SPAM[user_id] < cooldown:
             return True
