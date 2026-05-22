@@ -49,6 +49,7 @@ python bot.py
 nano bot.py
 python bot.py
 nano bot.py
+<<<<<<< HEAD
 python bot.py
 CTRL + C
 python bot.py
@@ -60,3 +61,5 @@ nano bot.py
 exit
 python bot.py
 exit
+=======
+>>>>>>> 2ecb464ceb708171b4fa208edfd19fd4290fee66

@@ -3,5 +3,8 @@ output.txt
 downloads/
 storage/
 .git-credentials
+<<<<<<< HEAD
 *.txt
 __pycache__/
+=======
+>>>>>>> 2ecb464ceb708171b4fa208edfd19fd4290fee66
