@@ -29,23 +29,6 @@ ADMIN_ID = 5798647399
 bot = telebot.TeleBot(TOKEN)
 
 
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Bot is running!"
-
-def run():
-    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
-
-
-
-
 def count_lines(filename):
     try:
         with open(filename, "r", encoding="utf-8") as f:
@@ -406,21 +389,26 @@ def buttons(message):
     elif message.text == "ℹ️ Help & Info":
         bot.reply_to(message, "ℹ️ Premium generator bot.")
 
-keep_alive()
-
-
 print("Bot is running...")
-
 while True:
     try:
-        bot.infinity_polling(
-            timeout=30,
-            long_polling_timeout=10
-        )
+        bot.infinity_polling(timeout=30, long_polling_timeout=10)
 
     except Exception as e:
-        print(e)
-        time.sleep(5)
+       
+
+
+    key = generate_key()
+
+    keys.append(key)
+
+    with open("keys.txt", "a") as f:
+        f.write(key + "\n")
+
+    bot.send_message(
+        message.chat.id,
+        f"🔑 New Key:\n\n{key}"
+    )
 
 
 @bot.message_handler(commands=['key'])
