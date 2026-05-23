@@ -168,6 +168,15 @@ def redeem(message):
 @bot.message_handler(func=lambda m: m.text == "Generate File")
 def generate_menu(message):
 
+    user_id = message.from_user.id
+
+    if user_id not in approved_users and user_id != ADMIN_ID:
+        bot.send_message(
+            message.chat.id,
+            "❌ You don't have access.\nBuy a key first."
+        )
+        return
+
     kb = ReplyKeyboardMarkup(resize_keyboard=True)
 
     kb.add(KeyboardButton("CODM"))
@@ -348,6 +357,9 @@ def buttons(message):
             caption="🎮 Codm Accounts Generated"
         )
 
+        os.remove("result_codm.txt")
+
+
     elif message.text == "🟢 Roblox":
 
         with open("roblox.txt", "r") as f:
@@ -371,6 +383,8 @@ def buttons(message):
             open("result_roblox.txt", "rb"),
             caption="🟢 Roblox Accounts Generated"
         )
+
+        os.remove("result_roblox.txt")
 
     elif message.text == "🔥 ML":
 
@@ -396,6 +410,7 @@ def buttons(message):
             caption="🔥 ML Accounts Generated"
         )
 
+        os.remove("result_ml.txt")
 
     elif message.text == "📊 My Statistics":
         bot.reply_to(message, "📊 No statistics yet.")
